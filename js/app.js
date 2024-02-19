@@ -53,6 +53,21 @@ const app = {
   
           // Get the content of index.html file
           let indexHtml = await zip.file('index.html').async("text");
+          
+          // Check if the <link> tag with rel="manifest" exists
+          const manifestLinkRegex = /<link\s+rel="manifest"\s+href="([^"]+)"\s*\/?>/i;
+          const manifestLinkMatch = indexHtml.match(manifestLinkRegex);
+          
+          // Match the closing title tag
+          const closingTitleTagRegex = /<\/title>/i;
+          const closingTitleTagIndex = indexHtml.search(closingTitleTagRegex);
+          
+          if (closingTitleTagIndex !== -1) {
+              // Insert the manifest link right after the closing title tag
+              indexHtml = indexHtml.slice(0, closingTitleTagIndex + 8) + '\n    <link rel="manifest" href="manifest.json">' + indexHtml.slice(closingTitleTagIndex + 8);
+          } else {
+              console.error('Closing title tag not found in index.html');
+          }
   
           // Insert the script tag before the closing body tag
           const scriptTag = `
