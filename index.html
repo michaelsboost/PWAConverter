@@ -3,6 +3,7 @@
   <head>
     <!-- Title needs to be at within the max 580 pixel length -->
     <title>PWAConverter: Easily convert your website into a PWA instantly!</title>
+    <link rel="manifest" href="manifest.json">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -110,5 +111,14 @@ Now that you know how PWAConverter works, upload your zip file below, as well as
         </div> -->
       </section>
     </main>
+  
+    <script>
+      // service worker for progressive web app
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+        })
+      }
+    </script>
   </body>
 </html>
