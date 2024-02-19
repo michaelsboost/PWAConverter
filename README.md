@@ -1,7 +1,7 @@
 # PWAConverter
 Easily convert your website into a PWA instantly!
 
-![](https://raw.githubusercontent.com/michaelsboost/PWAConverter/gh-pages/imgs/header.png)
+![](https://raw.githubusercontent.com/michaelsboost/PWAConverter/main/imgs/header.png)
 
 ### Version
 0.0.1
