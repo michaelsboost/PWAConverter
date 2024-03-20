@@ -174,10 +174,12 @@ const cacheName = '${appName}-cache';
 
 workbox.routing.registerRoute(
   ({ request }) => request.destination === 'script' ||
-                  request.destination === 'style' ||
-                  request.destination === 'document' ||
-                  request.destination === 'image' ||
-                  request.destination === 'font',
+                 request.destination === 'style' ||
+                 request.destination === 'document' ||
+                 request.destination === 'image' ||
+                 request.destination === 'font' ||
+                 request.destination === 'audio' ||
+                 request.destination === 'video',
   new CacheFirst({
     cacheName: cacheName,
     plugins: [
