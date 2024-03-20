@@ -71,6 +71,7 @@ const app = {
   
           // Insert the script tag before the closing body tag
           const scriptTag = `
+    <script src="https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js"></script>
     <script>
       // service worker for progressive web app
       if ('serviceWorker' in navigator) {
@@ -164,23 +165,26 @@ const app = {
 
     // Create the service worker code with dynamic caching
     const serviceWorkerCode = `// Service worker code
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js');
+
+const { registerRoute } = workbox.routing;
+const { CacheFirst } = workbox.strategies;
+
 const cacheName = '${appName}-cache';
 
-self.addEventListener('install', function(event) {
-    event.waitUntil(
-        caches.open(cacheName).then(function(cache) {
-            return cache.addAll(${JSON.stringify(filesToCache)});
-        })
-    );
-});
-
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        caches.match(event.request).then(function(response) {
-            return response || fetch(event.request);
-        })
-    );
-});`;
+workbox.routing.registerRoute(
+  ({ request }) => request.destination === 'script' ||
+                  request.destination === 'style' ||
+                  request.destination === 'document' ||
+                  request.destination === 'image' ||
+                  request.destination === 'font',
+  new CacheFirst({
+    cacheName: cacheName,
+    plugins: [
+      // Any additional plugins can be added here
+    ],
+  })
+);`;
 
     return serviceWorkerCode;
   },
