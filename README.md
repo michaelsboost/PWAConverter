@@ -3,6 +3,10 @@
 
 Easily convert your website into a **Progressive Web App (PWA)** in seconds!
 
+![](https://raw.githubusercontent.com/michaelsboost/PWAConverter/gh-pages/imgs/header.png)
+
+[![MIT License](https://img.shields.io/github/license/michaelsboost/PWAConverter)](LICENSE) [![GitHub Stars](https://img.shields.io/github/stars/michaelsboost/PWAConverter)](https://github.com/michaelsboost/PWAConverter/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/michaelsboost/PWAConverter)](https://github.com/michaelsboost/PWAConverter/issues)
+
 ----------
 
 ## **🚀 About PWAConverter**
