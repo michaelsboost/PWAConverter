@@ -1,0 +1,85 @@
+<!-- Main Content -->
+<main class="container text-center">
+    <h1 class="text-3xl font-bold mt-10">Convert Your Website into a 
+      <a class="no-underline" href="https://github.com/michaelsboost/PWAConverter">
+        <img src="https://michaelsboost.com/PWAConverter/imgs/logo.svg" alt="Logo" class="h-14" target="_blank">
+      </a> Instantly! 
+
+      <a class="no-underline" href="https://github.com/michaelsboost/PWAConverter">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 text-red-400" viewBox="0 0 24 24">
+          <g fill="none">
+            <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/>
+            <path fill="currentColor" d="M18.494 3.801c2.095 1.221 3.569 3.7 3.504 6.592C21.86 16.5 13.5 21 12 21s-9.861-4.5-9.998-10.607c-.065-2.892 1.409-5.37 3.504-6.592C7.466 2.66 9.928 2.653 12 4.338c2.072-1.685 4.534-1.679 6.494-.537"/>
+          </g>
+        </svg>
+      </a>
+    </h1>
+    <p class="mt-4 text-lg text-gray-700">Upload a ZIP file containing your website's files to generate a Progressive Web App.</p>
+    
+    <!-- Upload Section -->
+      <article>
+        <label for="importlogo" class="cursor-pointer">
+          <span class="block text-lg font-semibold mb-2">Upload Your Logo</span>
+        <img id="logo" class="h-24" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gQ3JlYXRlZCB3aXRoIElua3NjYXBlIChodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy8pIC0tPgoKPHN2ZwogICB3aWR0aD0iNTEyIgogICBoZWlnaHQ9IjUxMiIKICAgdmlld0JveD0iMCAwIDEzNS40NjY2NiAxMzUuNDY2NjciCiAgIHZlcnNpb249IjEuMSIKICAgaWQ9InN2ZzUiCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnMKICAgICBpZD0iZGVmczIiIC8+CiAgPGcKICAgICBpZD0ibGF5ZXIxIj4KICAgIDxjaXJjbGUKICAgICAgIHN0eWxlPSJvcGFjaXR5OjAuODMwNjQyO2ZpbGw6IzQ3NDdmZjtmaWxsLW9wYWNpdHk6MTtzdHJva2Utd2lkdGg6Ny45Mzc1O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIgogICAgICAgaWQ9InBhdGgxODQiCiAgICAgICBjeD0iNjcuNzMzMzMiCiAgICAgICBjeT0iNjcuNzMzMzMiCiAgICAgICByPSI2Ny43MzMzMyIgLz4KICAgIDxwYXRoCiAgICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowLjMyMjQzMXB4O3N0cm9rZS1saW5lY2FwOmJ1dHQ7c3Ryb2tlLWxpbmVqb2luOm1pdGVyO3N0cm9rZS1vcGFjaXR5OjEiCiAgICAgICBkPSJNIDc0LjU4MzQxMiw2My43NjcwNDQgODUuMzI0MTY3LDIzLjY4MTk5MiAzOC4xODAxMzgsNzAuODI2MDIzIDYwLjg4MzI1Niw3MS42OTk2MjIgNTAuMTQyNTAxLDExMS43ODQ2NyA5Ny4yODY1MjksNjQuNjQwNjQzIFoiCiAgICAgICBpZD0icGF0aDg5OC0zIiAvPgogIDwvZz4KPC9zdmc+Cg==">
+          </label>
+        <input type="file" id="importlogo" class="hidden" accept="image/*">
+      </article>
+      <article>
+        <label for="loadFile" class="block text-lg font-semibold">Upload Your ZIP File</label>
+        <input type="file" id="loadFile" accept=".zip">
+      </article>
+      
+      <button id="exportPWA" class="mt-6 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg shadow-md hidden">Convert to PWA</button>
+    
+    <!-- Instructions -->
+    <section class="mt-10 text-left">
+      <!-- How to Prepare Your ZIP File -->
+      <details>
+        <summary>
+          How to Prepare Your ZIP File
+        </summary>
+        <div>
+          <p class="mt-2 text-gray-700">Ensure your ZIP file follows this structure:</p>
+          <article>
+            <pre class="m-0 p-0 text-sm bg-transparent">
+index.html
+css/style.css
+js/script.js</pre>
+          </article>
+        
+          <p class="mt-4 text-gray-700">Do NOT include nested folders like this:</p>
+          <article>
+            <pre class="m-0 p-0 text-sm bg-transparent">
+AppName/index.html
+AppName/css/style.css
+AppName/js/script.js</pre>
+          </article>
+        </div>
+      </details>
+
+      <!-- How PWAConverter Uses Your Files -->
+      <details>
+        <summary>
+          How PWAConverter Uses Your Files
+        </summary>
+        <div>
+          <p class="mt-2 text-gray-700">Your application's information is retrieved from the following meta tags in your index.html file:</p>
+          <article>
+            <pre class="m-0 p-0 text-sm bg-transparent">
+&lt;meta name="application-name" content="YourAppName"&gt;
+&lt;title&gt;Your App Title&lt;/title&gt;
+&lt;meta name="description" content="Your app description here"&gt;</pre>
+          </article>
+        </div>
+      </details>
+    </section>
+
+    <!-- Video Demo -->
+    <section class="mt-10">
+      <h2 class="text-2xl font-semibold">Watch How It Works</h2>
+      <video class="w-full h-96 bg-black" controls>
+        <source src="https://michaelsboost.com/PWAConverter/pwaconverter.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+</main>

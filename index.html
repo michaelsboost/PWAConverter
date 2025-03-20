@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
   <head>
-    <!-- Title needs to be at within the max 580 pixel length -->
     <title>PWAConverter: Easily convert your website into a PWA instantly!</title>
-    <link rel="manifest" href="manifest.json">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Description needs to be within the max 1000 pixel length -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, interactive-widget=resizes-content">
     <meta name="application-name" content="PWAConverter">
     <meta name="description" content="Easily convert your website into a PWA instantly!">
-    <meta property="og:url"         content="https://michaelsboost.github.io/PWAConverter/" />
-    <meta property="og:type"        content="website" />
-    <meta property="og:title"       content="PWAConverter" />
+    <meta name="author" content="Michael Schwartz">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="PWAConverter: Easily convert your website into a PWA instantly!">
+    <meta name="theme-color" content="hsl(205deg 18.75% 87.45%)">
+    <meta name="apple-mobile-web-app-title" content="PWAConverter: Easily convert your website into a PWA instantly!">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="./index.html">
+    <meta name="msapplication-navbutton-color" content="hsl(205deg 18.75% 87.45%)">
+    <meta property="og:url" content="https://michaelsboost.com/PWAConverter" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PWAConverter" />
     <meta property="og:description" content="Easily convert your website into a PWA instantly!" />
     <meta property="og:image"       content="https://raw.githubusercontent.com/michaelsboost/PWAConverter/main/imgs/header.png" />
-    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="imgs/logo.svg" />
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#ffffff">
     <!-- Windows Phone -->
@@ -25,105 +32,113 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Polyrise">
     <link rel="apple-touch-icon" href="img/logo.png">
-    <!-- Must contain only 1 css file -->
-    <link rel="stylesheet"    href="css/style.css">
-    <!-- Must contain only 1 javascript file -->
-    <script src="js/import.js" defer></script>
+    <link rel="stylesheet" href="dist/bundle.css">
   </head>
   <body>
-    <nav class="absolute top-0 inset-x-0 z-10 bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg m-0 px-8 py-2">
-      <ul>
-        <a href="#" class="py-0 my-0 border-none bg-transparent text-current">
-          <img style="height: 50px;" src="imgs/logo.svg"> 
-          <span class="relative ml-3 text-sm">PWAConverter</span>
+    <main class="container text-center">
+      <h1 class="text-3xl font-bold mt-10">Convert Your Website into a 
+        <a class="no-underline" href="https://github.com/michaelsboost/PWAConverter">
+          <img src="imgs/logo.svg" alt="Logo" class="h-14" target="_blank">
+        </a> Instantly! 
+
+        <a class="no-underline" href="https://github.com/michaelsboost/PWAConverter">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 text-red-400" viewBox="0 0 24 24">
+            <g fill="none">
+              <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"></path>
+              <path fill="currentColor" d="M18.494 3.801c2.095 1.221 3.569 3.7 3.504 6.592C21.86 16.5 13.5 21 12 21s-9.861-4.5-9.998-10.607c-.065-2.892 1.409-5.37 3.504-6.592C7.466 2.66 9.928 2.653 12 4.338c2.072-1.685 4.534-1.679 6.494-.537"></path>
+            </g>
+          </svg>
         </a>
-      </ul>
-      <ul>
-        <li>
-          <a href="https://michaelsboost.com/donate/" target="_blank" class="py-0 my-0 border-none bg-transparent text-black">
-            <i class="text-base sm:text-xl fa fa-heart"></i>
-          </a>
-        </li>
-        <li>
-          <a rel="noopener noreferrer" class="text-black" aria-label="GitHub repository" href="https://github.com/michaelsboost/PWAConverter/" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24.25" viewBox="0 0 496 512" class="icon-github">
-              <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    
-    <main class="pt-28">
-      <section>
-        <div>
-          <h1>
-            <mark>PWAConverter</mark> <br/>
-            Easily convert your website into a PWA instantly!
-          </h1>
-          <p class="whitespace-pre-wrap">Add the files inside of the directory folder to a compressed zip file. Then upload to convert the web app to a PWA.
-            
-<strong>IMPORTANT!!!</strong> (your zip file must look something like this, when exporting it as a desktop/chrome application, or extension)
-    
-index.html
-css/style.css
-js/script.js 
-
-The zip example below WILL NOT WORK!!!
-
-AppName/index.html
-AppName/css/style.css
-AppName/js/script.js
-
-Your application's name is retrieved from the following in index.html
-<kbd>&lt;meta name="application-name" content="PWAConverter"&gt;</kbd>
-
-Your application's title is retrieved from the following in index.html
-<kbd>&lt;title&gt;PWAConverter: Easily convert your website into a PWA instantly!&lt;/title&gt;</kbd>
-
-Your application's description is retrieved from the following in index.html
-<kbd>&lt;meta name="description" content="Easily convert your website into a PWA instantly!"&gt;</kbd>
-
-Now that you know how PWAConverter works, upload your zip file below, as well as your application's logo, and let PWAConverter do its magic!</p>
-          <div class="text-center md:text-left">
-            <div class="hidden">
-              <input id="importlogo" type="file" accept="image/png, image/jpeg, image/svg+xml">
-            </div>
-            <nav>
-              <input id="loadFile" type="file" accept=".zip, zip, application/zip">
-              <label for="importlogo" class="cursor-pointer float-right">
-                <img id="logo" class="h-10" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gQ3JlYXRlZCB3aXRoIElua3NjYXBlIChodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy8pIC0tPgoKPHN2ZwogICB3aWR0aD0iNTEyIgogICBoZWlnaHQ9IjUxMiIKICAgdmlld0JveD0iMCAwIDEzNS40NjY2NiAxMzUuNDY2NjciCiAgIHZlcnNpb249IjEuMSIKICAgaWQ9InN2ZzUiCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnMKICAgICBpZD0iZGVmczIiIC8+CiAgPGcKICAgICBpZD0ibGF5ZXIxIj4KICAgIDxjaXJjbGUKICAgICAgIHN0eWxlPSJvcGFjaXR5OjAuODMwNjQyO2ZpbGw6IzQ3NDdmZjtmaWxsLW9wYWNpdHk6MTtzdHJva2Utd2lkdGg6Ny45Mzc1O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIgogICAgICAgaWQ9InBhdGgxODQiCiAgICAgICBjeD0iNjcuNzMzMzMiCiAgICAgICBjeT0iNjcuNzMzMzMiCiAgICAgICByPSI2Ny43MzMzMyIgLz4KICAgIDxwYXRoCiAgICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowLjMyMjQzMXB4O3N0cm9rZS1saW5lY2FwOmJ1dHQ7c3Ryb2tlLWxpbmVqb2luOm1pdGVyO3N0cm9rZS1vcGFjaXR5OjEiCiAgICAgICBkPSJNIDc0LjU4MzQxMiw2My43NjcwNDQgODUuMzI0MTY3LDIzLjY4MTk5MiAzOC4xODAxMzgsNzAuODI2MDIzIDYwLjg4MzI1Niw3MS42OTk2MjIgNTAuMTQyNTAxLDExMS43ODQ2NyA5Ny4yODY1MjksNjQuNjQwNjQzIFoiCiAgICAgICBpZD0icGF0aDg5OC0zIiAvPgogIDwvZz4KPC9zdmc+Cg==">
-              </label>
-            </nav>
-            
-            <button id="exportPWA" class="hidden">
-              Download
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-arrow-right">
-                <g class="head">
-                  <path d="M10 16L14 12"></path>
-                  <path d="M10 8L14 12"></path>
-                </g>
-                <path class="line" d="M0 12H14"></path>
-              </svg>
-            </button>
+      </h1>
+      <p class="mt-4 text-lg text-gray-700">Upload a ZIP file containing your website's files to generate a Progressive Web App.</p>
+      
+      <!-- Upload Section -->
+        <article>
+          <label for="importlogo" class="cursor-pointer">
+            <span class="block text-lg font-semibold mb-2">Upload Your Logo</span>
+          <img id="logo" class="h-24" src="imgs/file-1.svg">
+            </label>
+          <input type="file" id="importlogo" class="hidden" accept="image/*">
+        </article>
+        <article>
+          <label for="loadFile" class="block text-lg font-semibold">Upload Your ZIP File</label>
+          <input type="file" id="loadFile" accept=".zip">
+        </article>
+        
+        <button id="exportPWA" class="mt-6 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg shadow-md hidden">Convert to PWA</button>
+      
+      <!-- Instructions -->
+      <section class="mt-10 text-left">
+        <!-- How to Prepare Your ZIP File -->
+        <details>
+          <summary>
+            How to Prepare Your ZIP File
+          </summary>
+          <div>
+            <p class="mt-2 text-gray-700">Ensure your ZIP file follows this structure:</p>
+            <article>
+              <pre class="m-0 p-0 text-sm bg-transparent">index.html
+  css/style.css
+  js/script.js</pre>
+            </article>
+          
+            <p class="mt-4 text-gray-700">Do NOT include nested folders like this:</p>
+            <article>
+              <pre class="m-0 p-0 text-sm bg-transparent">AppName/index.html
+  AppName/css/style.css
+  AppName/js/script.js</pre>
+            </article>
           </div>
-        </div>
-        <div class="pt-10">
-          <video class="w-full h-96 bg-black" controls>
-            <source src="pwaconverter.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        </details>
+
+        <!-- How PWAConverter Uses Your Files -->
+        <details>
+          <summary>
+            How PWAConverter Uses Your Files
+          </summary>
+          <div>
+            <p class="mt-2 text-gray-700">Your application's information is retrieved from the following meta tags in your index.html file:</p>
+            <article>
+              <pre class="m-0 p-0 text-sm bg-transparent">&lt;meta name="application-name" content="YourAppName"&gt;
+  &lt;title&gt;Your App Title&lt;/title&gt;
+  &lt;meta name="description" content="Your app description here"&gt;</pre>
+            </article>
+          </div>
+        </details>
+      </section>
+
+      <!-- Video Demo -->
+      <section class="mt-10">
+        <h2 class="text-2xl font-semibold">Watch How It Works</h2>
+        <video class="w-full h-96 bg-black" controls="">
+          <source src="vids/pwaconverter.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </section>
     </main>
-    
+
+    <script src="dist/script.js" type="module"></script>
     <script src="https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js"></script>
     <script>
-      // service worker for progressive web app
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js')
-        })
+        navigator.serviceWorker.register('./sw.js').then(reg => {
+          reg.addEventListener('updatefound', () => {
+            const newSW = reg.installing;
+            newSW.addEventListener('statechange', () => {
+              if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+                // Notify the user and reload if they confirm
+                if (confirm('A new version is available. Reload now?')) {
+                  window.location.reload();
+                }
+              }
+            });
+          });
+        });
+
+        // Ensure immediate activation of a new service worker
+        navigator.serviceWorker.ready.then(registration => {
+          registration.active.postMessage({ type: 'SKIP_WAITING' });
+        });
       }
     </script>
   </body>
