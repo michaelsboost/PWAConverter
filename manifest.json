@@ -1,12 +1,15 @@
 {
-  "theme_color": "#13171f",
-  "background_color": "#13171f",
-  "display": "standalone",
-  "start_url": "./index.html",
-  "lang": "en-US",
+  "id": "com.michaelsboost.pwaconverter",
   "name": "PWAConverter",
   "short_name": "PWAConverter",
   "description": "Easily convert your website into a PWA instantly!",
+  "lang": "en-US",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#13171f",
+  "background_color": "#13171f",
   "icons": [
     {
       "src": "./imgs/logo-192x192.png",
@@ -31,6 +34,17 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    }
+  ],
+  "categories": [
+    "productivity",
+    "utilities"
+  ],
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.michaelsboost.pwaconverter"
     }
   ]
 }
